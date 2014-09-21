@@ -1,0 +1,16 @@
+﻿@using Prototyping.Ipsum
+@using Prototyping.Placeholdit
+@{
+    ViewBag.Title = "ExampleFour";
+}
+<div class="row">
+    <h1 class="col-xs-12">Example Four</h1>
+</div>
+<div class="row">
+    <div class="col-xs-3">
+       @Html.Placehold(200, 300, htmlAttributes: new { @class = "img-responsive" })
+    </div>
+    <div class="col-xs-9">
+        @Html.Ipsum().h1().p()
+    </div>
+</div>

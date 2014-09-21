@@ -1,0 +1,86 @@
+﻿@using Prototyping.Ipsum
+@using Prototyping.Placeholdit
+@{
+    ViewBag.Title = "Session";
+    Layout = "~/Views/App/_AppLayout.cshtml";
+}
+<div class="row">
+    <div class="col-xs-12">
+        <h2><a href="@Url.Action("index")"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back</a></h2>
+    </div>
+</div>
+<div class="row hidden-lg">
+    <div class="col-sm-12">
+        <h5>Filter:</h5>
+        <select class="form-control" id="mobileNav">
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="visible-lg">
+        <div class="col-lg-3">
+            <h5>By Track</h5>
+            @Html.Ipsum().ul(links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+            <h5>By Day</h5>
+            @Html.Ipsum().ul(3, links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+        </div>
+    </div>
+    <div class="col-xs-12 col-lg-9">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4">
+                <figure>
+                    @Html.Placehold(300, 400, "Speaker Avatar", htmlAttributes: new { @class = "img-responsive" })
+                    <figcaption>
+                        <a href="#">@Html.Ipsum().Words(2)</a>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                @Html.Ipsum().h3().p(2)
+                <p><strong>Start Time: 0:00</strong></p>
+                <p>
+                    <a href="#" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#rsvpModal">
+                        RSVP for
+                        this session
+                    </a>
+                </p>
+                
+                <p class="text-center">30 seats available</p>
+
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>Session Sponsors</h4>
+                <ul class="list-inline">
+                    @for (int i = 0; i < 5; i++)
+                    {
+                        <li>@Html.Placehold(120, 160, htmlAttributes: new { @class = "img-responsive" })</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="rsvpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Registration Successful</h4>
+            </div>
+            <div class="modal-body">
+                <p>You have registered for this session. Thank you!</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

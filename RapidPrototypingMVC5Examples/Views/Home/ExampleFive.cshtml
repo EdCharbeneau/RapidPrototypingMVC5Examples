@@ -1,0 +1,27 @@
+﻿@using Prototyping.Ipsum
+@{
+    ViewBag.Title = "ExampleFive";
+}
+<div class="row">
+    <h1 class="col-xs-12">Example Five</h1>
+</div>
+<div class="row hidden-lg">
+    <div class="col-xs-12">
+        <select id="mobileNav">
+            <option value="#">Menu...</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-3 visible-lg">
+        <h5>Navigation</h5>
+        @Html.Ipsum().ul(links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+    </div>
+    <div class="col-xs-12 col-lg-9">
+        @Html.Ipsum().h1().p()
+    </div>
+</div>

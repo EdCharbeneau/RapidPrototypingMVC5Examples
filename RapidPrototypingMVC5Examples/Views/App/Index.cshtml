@@ -1,0 +1,54 @@
+﻿@using Prototyping.Ipsum
+@using Prototyping.Placeholdit
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/App/_AppLayout.cshtml";
+}
+
+<div class="row hidden-lg">
+    <div class="col-sm-12">
+        <h5>Filter:</h5>
+        <select class="form-control" id="mobileNav">
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+            <option value="#">@Html.Ipsum().Words(2)</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3 visible-lg">
+        <h5>By Track</h5>
+        @Html.Ipsum().ul(links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+        <h5>By Day</h5>
+        @Html.Ipsum().ul(3, links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+    </div>
+    <div class="col-sm-12 col-lg-9">
+        <h4>Sessions</h4>
+        @for (int i = 0; i < 5; i++)
+        {
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-2">
+                            @Html.Placehold(150, 200, "Avatar", htmlAttributes: new { @class = "img-responsive" })
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <h3 class="session-title"><a href="@Url.Action("session")">@Html.Ipsum().Words(2)</a></h3>
+                            @Html.Ipsum().p()
+                            <span>Start Time: 0:00</span>
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <p><a href="@Url.Action("Session")" class="btn btn-primary btn-lg btn-block">Details</a></p>
+                            <p class="text-center">30 seats available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

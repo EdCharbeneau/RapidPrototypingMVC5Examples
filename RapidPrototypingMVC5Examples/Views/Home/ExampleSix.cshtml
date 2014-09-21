@@ -1,0 +1,37 @@
+﻿@using Prototyping.Ipsum
+@using Prototyping.Placeholdit
+@{
+    ViewBag.Title = "ExampleSix";
+}
+<div class="row">
+    <h1 class="col-xs-12">Example Six</h1>
+</div>
+<div class="row">
+    <!-- swap these columns to demo Left vs. Right navigation -->
+    <!-- Copy -->
+    <div class="col-xs-3">
+        <h5>Navigation</h5>
+        @Html.Ipsum().ul(links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+    </div>
+    <!-- /Copy -->
+    <div class="col-xs-9">
+        @Html.Ipsum().h1().p()
+    </div>
+    <!-- Paste below and reload the page -->
+</div>
+<div class="row">
+    <!-- Easily change layout by changing column widths -->
+    <!-- Change to class="four columns" -->
+    <div class="col-xs-6">
+        @Html.Ipsum().h2()
+        @Html.Placehold(300, 300, htmlAttributes: new { @class = "img-responsive" })
+        @Html.Ipsum().p()
+    </div>
+    <!-- Change to class="eight columns" -->
+    <div class="col-xs-6">
+        @Html.Ipsum().h2()
+        @Html.Placehold(600, 300, htmlAttributes: new { @class = "img-responsive" })
+        @Html.Ipsum().p()
+    </div>
+    <!-- reload the page to see the changes -->
+</div>

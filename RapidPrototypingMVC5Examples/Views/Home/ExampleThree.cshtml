@@ -1,0 +1,17 @@
+﻿@using Prototyping.Ipsum
+@{
+    ViewBag.Title = "ExampleThree";
+}
+<div class="row">
+    <h1 class="col-xs-12">Example Three</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-lg-3">
+        <h3>Navigation</h3>
+        @Html.Ipsum().ul(links: true, ulAttributes: new { @class = "nav nav-pills nav-stacked" })
+    </div>
+    <div class="col-xs-12 col-lg-9">
+        <h1>Some content</h1>
+        @Html.Ipsum().p()
+    </div>
+</div>
